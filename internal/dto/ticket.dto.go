@@ -5,7 +5,8 @@ type JiraIssueResponse struct {
 	ID     string `json:"id"`
 	Key    string `json:"key"`
 	Fields struct {
-		Status struct {
+		StatusCategoryChangeDate string `json:"statuscategorychangedate"`
+		Status                   struct {
 			Name        string `json:"name"`
 			Description string `json:"description"`
 		} `json:"status"`
@@ -18,7 +19,6 @@ type JiraIssueResponse struct {
 			OriginalEstimate string `json:"originalEstimate"`
 		} `json:"timetracking"`
 	} `json:"fields"`
-	StatusCategoryChangeDate string `json:"statuscategorychangedate"`
 }
 
 type GetIssueResponse struct {

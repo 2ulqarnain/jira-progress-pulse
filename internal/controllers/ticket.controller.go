@@ -23,7 +23,7 @@ func GetIssueByID(c *fiber.Ctx) error {
 		}{
 			StatusName:        response.Fields.Status.Name,
 			StatusDescription: response.Fields.Status.Description,
-			StatusChangedDate: response.StatusCategoryChangeDate,
+			StatusChangedDate: response.Fields.StatusCategoryChangeDate,
 		},
 		Assignee: struct {
 			DisplayName string            `json:"name"`
