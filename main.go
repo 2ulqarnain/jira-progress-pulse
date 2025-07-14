@@ -16,10 +16,10 @@ func main() {
 	app.Use(cors.New())
 	app.Use(logger.New())
 
-	// issueGroup := app.Group("/issues")
-	app.Get("/issues/:issueID", controllers.GetIssueByID)
+	issueGroup := app.Group("/issues")
+	issueGroup.Get("/:issueID", controllers.GetIssueByID)
 
-	// app.Static("/", "./res/home.html")
+	app.Static("/", "./res/home.html")
 	app.Listen(":8001")
 
 }
